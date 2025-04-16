@@ -21,10 +21,10 @@ class PlayerMoveListener(val plugin: GalaxyLobbyPlugin) : Listener {
         if (location.y < 0) {
             plugin.resetPlayer(player, true)
             player.sendComponent(MessageFormat.setPrefix("<rainbow>You happy with yourself?</rainbow>"))
-        } else if (location.y > 200) {
-            location.y = 200.0
+        } else if (player.world.maxHeight < location.y) {
+            location.y = player.world.maxHeight.toDouble()
             player.teleport(location)
-            player.sendComponent(MessageFormat.setPrefix(MessageFormat.setSecondaryColor("You can't go that high!")))
+            player.sendComponent(MessageFormat.setPrefix(MessageFormat.setPrimaryColor("You can't go that high!")))
         }
     }
 
