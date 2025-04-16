@@ -14,7 +14,7 @@ import org.sayandev.stickynote.loader.bukkit.StickyNoteBukkitLoader
 import xyz.lncvrt.galaxyapi.utils.MessageFormat
 import xyz.lncvrt.galaxylobby.command.DiscordCommand
 import xyz.lncvrt.galaxylobby.command.WebsiteCommand
-import xyz.lncvrt.galaxylobby.listener.*
+import xyz.lncvrt.galaxylobby.event.*
 import java.util.*
 
 

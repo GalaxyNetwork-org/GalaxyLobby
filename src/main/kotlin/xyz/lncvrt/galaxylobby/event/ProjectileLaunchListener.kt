@@ -1,4 +1,4 @@
-package xyz.lncvrt.galaxylobby.listener
+package xyz.lncvrt.galaxylobby.event
 
 import org.bukkit.Material
 import org.bukkit.entity.Firework

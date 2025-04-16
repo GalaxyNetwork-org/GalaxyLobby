@@ -1,4 +1,4 @@
-package xyz.lncvrt.galaxylobby.listener
+package xyz.lncvrt.galaxylobby.event
 
 import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer
 import org.bukkit.event.EventHandler

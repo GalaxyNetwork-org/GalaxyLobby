@@ -1,4 +1,4 @@
-package xyz.lncvrt.galaxylobby.listener
+package xyz.lncvrt.galaxylobby.event
 
 import org.bukkit.GameMode
 import org.bukkit.Sound
