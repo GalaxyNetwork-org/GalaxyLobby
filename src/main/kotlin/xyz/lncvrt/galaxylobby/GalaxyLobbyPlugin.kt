@@ -17,7 +17,6 @@ import xyz.lncvrt.galaxylobby.command.WebsiteCommand
 import xyz.lncvrt.galaxylobby.event.*
 import java.util.*
 
-
 class GalaxyLobbyPlugin : JavaPlugin() {
     internal val jumpPadCooldowns = HashMap<UUID, Long>()
     internal val cooldowns = HashMap<Player, MutableMap<String, Long>>()
