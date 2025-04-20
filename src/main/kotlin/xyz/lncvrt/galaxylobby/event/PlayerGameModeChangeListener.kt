@@ -13,7 +13,7 @@ class PlayerGameModeChangeListener(val plugin: GalaxyLobbyPlugin) : Listener {
         if (event.newGameMode === GameMode.CREATIVE) {
             player.inventory.clear()
         } else if (event.newGameMode === GameMode.ADVENTURE) {
-            plugin.resetPlayer(player, false, false)
+            return
         } else {
             event.isCancelled = true
             player.gameMode = GameMode.ADVENTURE
