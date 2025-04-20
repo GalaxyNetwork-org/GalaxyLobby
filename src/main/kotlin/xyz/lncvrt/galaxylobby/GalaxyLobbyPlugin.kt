@@ -32,6 +32,7 @@ class GalaxyLobbyPlugin : JavaPlugin() {
     private fun registerEvents() {
         val pluginManager = server.pluginManager
         pluginManager.registerEvents(InventoryClickListener(), this)
+        pluginManager.registerEvents(PlayerAdvancementCriterionGrantListener(), this)
         pluginManager.registerEvents(PlayerGameModeChangeListener(this), this)
         pluginManager.registerEvents(PlayerInteractListener(this), this)
         pluginManager.registerEvents(PlayerItemDamageListener(), this)
