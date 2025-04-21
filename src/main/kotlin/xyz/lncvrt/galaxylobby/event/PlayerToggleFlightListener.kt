@@ -17,7 +17,7 @@ class PlayerToggleFlightListener : Listener {
 
             event.isCancelled = true
             player.allowFlight = false
-            direction.multiply(2.5f)
+            direction.multiply(1.25f)
             direction.setY(1)
             player.velocity = direction
             player.playSound(player.location, Sound.ENTITY_ENDER_DRAGON_FLAP, 1.0f, 1.0f)

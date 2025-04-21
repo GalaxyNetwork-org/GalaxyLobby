@@ -43,7 +43,7 @@ class PlayerMoveListener(val plugin: GalaxyLobbyPlugin) : Listener {
             if (currentTime - lastActivation < 1000) return
         }
 
-        if (playerBlock.type === Material.CHERRY_PRESSURE_PLATE) {
+        if (playerBlock.type === Material.MANGROVE_PRESSURE_PLATE) {
             plugin.jumpPadCooldowns.put(playerId, currentTime)
 
             if (player.gameMode == GameMode.ADVENTURE && player.inventory.heldItemSlot == 7) {
@@ -69,7 +69,7 @@ class PlayerMoveListener(val plugin: GalaxyLobbyPlugin) : Listener {
                 }, 40)
                 return
             }
-            player.velocity = Vector(0.0, 1.0, 3.5)
+            player.velocity = Vector(0.0, 0.75, 1.5)
             player.playSound(player.location, Sound.ENTITY_BAT_TAKEOFF, 1.0f, 1.0f)
         }
     }
