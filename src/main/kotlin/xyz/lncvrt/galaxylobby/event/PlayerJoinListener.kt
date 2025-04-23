@@ -24,7 +24,6 @@ class PlayerJoinListener(val plugin: GalaxyLobbyPlugin) : Listener {
             player.sendComponent("${MessageFormat.setPrimaryColor("<bold>DISCORD</bold><gray>:</gray>")} ${MessageFormat.setSecondaryColor("<click:open_url:'https://galaxy.lncvrt.xyz/discord'>galaxy.lncvrt.xyz/discord</click>")}")
             player.sendMessage("")
             player.sendComponent("<dark_gray><strikethrough>+---------------------***---------------------+")
-            player.sendComponent("<color:#A48FD1>It's easter! Collect eggs around the map to win a rare <b><gradient:#FBC2EB:#A6C1EE>BUNNY</gradient></b> tag!</color>")
         }, 5)
     }
 }
