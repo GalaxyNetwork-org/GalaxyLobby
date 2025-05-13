@@ -18,9 +18,8 @@ import xyz.lncvrt.galaxylobby.event.*
 import java.util.*
 
 class GalaxyLobbyPlugin : JavaPlugin() {
-    internal val jumpPadCooldowns = HashMap<UUID, Long>()
-    internal val cooldowns = HashMap<Player, MutableMap<String, Long>>()
-    internal val miniMessage: MiniMessage = MiniMessage.miniMessage()
+    val jumpPadCooldowns = HashMap<UUID, Long>()
+    val cooldowns = HashMap<Player, MutableMap<String, Long>>()
 
     override fun onEnable() {
         StickyNoteBukkitLoader(this)
@@ -41,10 +40,11 @@ class GalaxyLobbyPlugin : JavaPlugin() {
         pluginManager.registerEvents(PlayerMoveListener(this), this)
         pluginManager.registerEvents(PlayerSwapHandItemsListener(), this)
         pluginManager.registerEvents(PlayerToggleFlightListener(), this)
-        pluginManager.registerEvents(ProjectileLaunchListener(this), this)
+        pluginManager.registerEvents(ProjectileLaunchListener(), this)
     }
 
     internal fun resetPlayer(player: Player, teleport: Boolean, setGamemode: Boolean) {
+        val miniMessage: MiniMessage = MiniMessage.miniMessage()
         val effect = PotionEffect(PotionEffectType.SPEED, PotionEffect.INFINITE_DURATION, 1, false, false)
 
         player.inventory.clear()
