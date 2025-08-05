@@ -13,7 +13,7 @@ import xyz.lncvrt.galaxylobby.GalaxyLobbyPlugin
 class PlayerInteractListener(val plugin: GalaxyLobbyPlugin) : Listener {
     @EventHandler
     fun onPlayerInteractEvent(event: PlayerInteractEvent) {
-        if (event.getAction() !== Action.RIGHT_CLICK_AIR && event.getAction() !== Action.RIGHT_CLICK_BLOCK) {
+        if (event.action !== Action.RIGHT_CLICK_AIR && event.action !== Action.RIGHT_CLICK_BLOCK) {
             return
         }
 
@@ -32,6 +32,6 @@ class PlayerInteractListener(val plugin: GalaxyLobbyPlugin) : Listener {
             "[Server Selector (Right Click)]" -> CommandHelper().executeAsConsole("dmenu open serverselector ${player.name}")
         }
 
-        playerCooldowns.put(name, currentTime)
+        playerCooldowns[name] = currentTime
     }
 }

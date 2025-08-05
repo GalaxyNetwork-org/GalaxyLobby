@@ -2,7 +2,7 @@ import org.sayandev.plugin.StickyNoteModules
 
 plugins {
     java
-    kotlin("jvm") version "2.2.0"
+    kotlin("jvm") version "2.1.21"
     id("xyz.jpenilla.run-paper") version "2.3.1"
     id("de.eldoria.plugin-yml.bukkit") version "0.7.1"
     id("org.sayandev.stickynote.project")
@@ -28,7 +28,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly("io.papermc.paper:paper-api:1.20.1-R0.1-SNAPSHOT")
+    compileOnly("io.papermc.paper:paper-api:1.21.8-R0.1-SNAPSHOT")
     compileOnly("xyz.lncvrt:galaxyapi:1.0.6")
 }
 
@@ -79,8 +79,7 @@ tasks {
             expand(
                 "version" to project.version as String,
                 "slug" to slug,
-                "name" to rootProject.name,
-                "description" to project.description
+                "name" to rootProject.name
             )
         }
     }

@@ -12,8 +12,7 @@ import org.bukkit.potion.PotionEffect
 import org.bukkit.potion.PotionEffectType
 import org.sayandev.stickynote.loader.bukkit.StickyNoteBukkitLoader
 import xyz.lncvrt.galaxyapi.utils.MessageFormat
-import xyz.lncvrt.galaxylobby.command.DiscordCommand
-import xyz.lncvrt.galaxylobby.command.WebsiteCommand
+import xyz.lncvrt.galaxylobby.command.*
 import xyz.lncvrt.galaxylobby.event.*
 import java.util.*
 
@@ -32,7 +31,7 @@ class GalaxyLobbyPlugin : JavaPlugin() {
         val pluginManager = server.pluginManager
         pluginManager.registerEvents(InventoryClickListener(), this)
         pluginManager.registerEvents(PlayerAdvancementCriterionGrantListener(), this)
-        pluginManager.registerEvents(PlayerGameModeChangeListener(this), this)
+        pluginManager.registerEvents(PlayerGameModeChangeListener(), this)
         pluginManager.registerEvents(PlayerInteractListener(this), this)
         pluginManager.registerEvents(PlayerItemDamageListener(), this)
         pluginManager.registerEvents(PlayerItemHeldListener(), this)
@@ -40,7 +39,7 @@ class GalaxyLobbyPlugin : JavaPlugin() {
         pluginManager.registerEvents(PlayerMoveListener(this), this)
         pluginManager.registerEvents(PlayerSwapHandItemsListener(), this)
         pluginManager.registerEvents(PlayerToggleFlightListener(), this)
-        pluginManager.registerEvents(ProjectileLaunchListener(), this)
+        pluginManager.registerEvents(PlayerElytraBoostListener(), this)
     }
 
     internal fun resetPlayer(player: Player, teleport: Boolean, setGamemode: Boolean) {
@@ -68,7 +67,7 @@ class GalaxyLobbyPlugin : JavaPlugin() {
         fireworkItem.setItemMeta(fireworkMeta)
         player.inventory.setItem(7, fireworkItem)
 
-        player.health = player.getAttribute(Attribute.GENERIC_MAX_HEALTH)?.value ?: 20.0
+        player.health = player.getAttribute(Attribute.MAX_HEALTH)?.value ?: 20.0
         player.foodLevel = 20
         player.saturation = 20f
         player.clearActivePotionEffects()

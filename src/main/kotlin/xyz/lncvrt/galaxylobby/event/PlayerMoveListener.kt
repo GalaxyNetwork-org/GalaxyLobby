@@ -31,8 +31,7 @@ class PlayerMoveListener(val plugin: GalaxyLobbyPlugin) : Listener {
     @EventHandler
     fun onPlayerMoveLaunchPad(event: PlayerMoveEvent) {
         val player = event.getPlayer()
-        val world: World? = plugin.server.getWorld("world")
-        if (world == null) return
+        val world: World = plugin.server.getWorld("world") ?: return
         val playerBlock = world.getBlockAt(player.location)
 
         val playerId = player.uniqueId
@@ -44,7 +43,7 @@ class PlayerMoveListener(val plugin: GalaxyLobbyPlugin) : Listener {
         }
 
         if (playerBlock.type === Material.MANGROVE_PRESSURE_PLATE) {
-            plugin.jumpPadCooldowns.put(playerId, currentTime)
+            plugin.jumpPadCooldowns[playerId] = currentTime
 
             if (player.gameMode == GameMode.ADVENTURE && player.inventory.heldItemSlot == 7) {
                 player.velocity = Vector(0, 1, 0)
