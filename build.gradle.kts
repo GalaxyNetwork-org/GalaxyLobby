@@ -2,7 +2,7 @@ import org.sayandev.plugin.StickyNoteModules
 
 plugins {
     java
-    kotlin("jvm") version "2.1.21"
+    kotlin("jvm") version "2.2.10"
     id("xyz.jpenilla.run-paper") version "2.3.1"
     id("de.eldoria.plugin-yml.bukkit") version "0.7.1"
     id("org.sayandev.stickynote.project")
